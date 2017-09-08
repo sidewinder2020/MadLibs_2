@@ -1,3 +1,7 @@
 <h1><%= @user.username %>'s Page</h1>
 
+<%= image_tag(@user.picture) %>
+
+<p> User's stories here - link to each stories show page </p> 
+
 <%= link_to "Logout", logout_path, method: :delete %>
