@@ -3,7 +3,8 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   has_many :ratings, :dependent => :destroy
-  has_many :stories, through :ratings
+  has_many :stories, through: :ratings
+
   has_many :user_stories, :dependent => :destroy
-  has_many :stories, through :user_stories
+  has_many :stories, through: :user_stories
 end

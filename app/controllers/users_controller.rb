@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       redirect_to root_path
+    end
   end
 
   def show
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
     unless session[:logged_in?]
       flash[:error] = "You must be logged in to view this content"
       redirect_to login_path
+    end
   end
 
 end
