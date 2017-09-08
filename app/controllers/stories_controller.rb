@@ -5,10 +5,12 @@ class StoriesController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @story = Story.new
   end
 
   def create
+    @user = User.find(params[:user_id])
     @story = Story.create(story_params)
     redirect_to story_path(@story)
   end
