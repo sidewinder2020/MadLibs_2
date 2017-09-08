@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
 
   def index
+    @user = User.find(params[:user_id])
     @stories = Story.all
   end
 
