@@ -2,6 +2,6 @@
 
 <%= image_tag(@user.picture) %>
 
-<p> User's stories here - link to each stories show page </p>
-
+<%= link_to "General Story Index", stories_path %>
+<%= link_to "Create a New Story", new_user_story_path(@user) %><br/>
 <%= link_to "Logout", logout_path, method: :delete %>

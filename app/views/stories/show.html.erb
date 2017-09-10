@@ -5,7 +5,7 @@
 <%= @story.emotion %> forever,  <%= @story.name_4 %></p><br/><br/>
 
 
-<%= link_to "EDIT this Abomination to have your image", edit_story_path(@story) %><br/>
+<%= link_to "EDIT this Abomination to have your image", edit_user_story_path(@user, @story) %><br/>
 <%= image_tag(@story.picture) %><br/>
 <%= link_to "INDEX Eulogy", stories_path %><br/>
-<%= link_to "DELETE this Awful Insult to Literature", story_path(@story), method: :delete %><br/>
+<%= link_to "DELETE this Awful Insult to Literature", user_story_path(@user, @story), method: :delete %><br/>

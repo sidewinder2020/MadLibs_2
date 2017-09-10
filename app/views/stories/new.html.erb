@@ -1,6 +1,6 @@
 <h1>Create a new Madlib</h1>
 
-<%= form_for(@story) do |f| %>
+<%= form_for [@user, @story] do |f| %>
   <%= f.label :name_1, "Your name" %><br/>
   <%= f.text_field :name_1 %><br/>
   <%= f.label :name_2, "any name:" %><br/>

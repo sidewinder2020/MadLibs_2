@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MadLibsMiniProject</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>AuthenticationAuthorizationExample</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <% flash.each do |type, message| %>
+  <%= content_tag :div, message, class: "flash_#{type}" %>
+  <% end %>
+  <%= yield %>
+</body>
 </html>
