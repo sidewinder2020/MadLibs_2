@@ -1,11 +1,10 @@
 <h1> "Eulogy"</h1>
 <h3> This magnificent drivel brought to you by: <%= @story.name_1 %> </h3>
+<%= link_to "EDIT this Abomination to have your image", edit_user_story_path(@user, @story) %><br/>
 
 <p>   If you are <%= @story.verb_1 %> this, it means I am <%= @story.adj_1 %>.  I am sure you are all <%= @story.adv_1 %> grieved.  Especially my <%= @story.fam %> <%= @story.name_2 %>, and our <%= @story.number %> children.  In my life, I <%= @story.verb_2 %> for many popular <%= @story.noun_1 %> shows, including '<%= @story.mil_rank %> Bilko' and 'Get <%= @story.adj_2 %>'.  I led a <%= @story.adj_3 %> life, filled with <%= @story.adj_4 %> <%= @story.noun_2 %> and even better memories.  I'll never forget the day I won my <%= @story.award %> award, and showed it to my lover.  They remarked, "It's so much <%= @story.adj_5 %> than I thought!", to which I replied, "That's what <%= @story.name_3 %> said."  We laughed and <%= @story.verb_3 %>.  I hope to be remembered as a <%= @story.noun_3 %>, who loved to make people <%= @story.verb_4 %>, but more importantly, as a(n) <%= @story.adj_6 %> individual.  Thank you all for <%= @story.verb_5 %>, I promise not to <%= @story.verb_6 %> you while you sleep.<br/>
-<%= @story.emotion %> forever,  <%= @story.name_4 %></p><br/><br/>
+<%= @story.emotion %> forever,  <%= @story.name_4 %></p><br/>
 
 
-<%= link_to "EDIT this Abomination to have your image", edit_user_story_path(@user, @story) %><br/>
 <%= image_tag(@story.picture) %><br/>
-<%= link_to "INDEX Eulogy", stories_path %><br/>
-<%= link_to "DELETE this Awful Insult to Literature", user_story_path(@user, @story), method: :delete %><br/>
+<%= link_to "Back", user_stories_path %><br/>

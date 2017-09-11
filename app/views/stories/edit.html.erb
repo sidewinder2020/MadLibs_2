@@ -1,7 +1,6 @@
-<h1>Edit your Eulogy</h1>
-<p> (This feature still under construction - deal with the Tom Selleck crab a little longer ^^) </p>
+<h1>Edit your Eulogy: Add a Picture</h1>
 
-<%= form_for(@story) do |f| %>
+<%= form_for [@user, @story] do |f| %>
   <%= f.label :picture, "Place Image URL here:" %><br/>
   <%= f.text_field :picture %><br/>
   <%= f.submit %>

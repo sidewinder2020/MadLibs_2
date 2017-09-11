@@ -1,7 +1,8 @@
 class StoriesController < ApplicationController
 
   def index
-    @stories = Story.all
+    @user = User.find(params[:user_id])
+    @stories = @user.stories
   end
 
   def new
@@ -12,6 +13,7 @@ class StoriesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @story = Story.create(story_params)
+    @user_story = UserStory.create(user_id: @user.id, story_id: @story.id)
     redirect_to user_story_path(@user, @story)
   end
 
@@ -22,12 +24,14 @@ class StoriesController < ApplicationController
 
 
   def edit
+    @user = User.find(params[:user_id])
     @story = Story.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:user_id])
     @story = Story.find(params[:id])
-    @story.update
+    @story.update(story_params)
     redirect_to user_story_path(@user, @story)
   end
 
@@ -35,6 +39,11 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
     @story.destroy
     redirect_to stories_path
+  end
+
+  def all_stories
+    @users = Users.all
+    @stories = Story.all
   end
 
   private

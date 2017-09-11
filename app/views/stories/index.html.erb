@@ -1,6 +1,6 @@
-<h1> Story 2 Index </h1>
-<p> -- link_to "Pick Another Story", madlibs_path OR welome_path?-- </p><br/><br/>
+<h1> My Eulogy Index </h1>
 
 <% @stories.each do |story| %>
-  <li><%= link_to "Story 2", story_path(story) %> by: <%= story.name_1 %></br> created on: <%= story.created_at %></li>
+  <li><%= link_to "Eulogy", user_story_path(@user, story) %> by: <%= story.name_1 %></br> created on: <%= story.created_at %></li>
+  <%= link_to "DELETE this Awful Insult to Literature", user_story_path(@user, story), method: :delete %><br/>
 <% end %>

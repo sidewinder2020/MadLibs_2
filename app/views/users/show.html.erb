@@ -1,7 +1,6 @@
 <h1><%= @user.username %>'s Page</h1>
 
-<%= image_tag(@user.picture) %>
+<%= image_tag(@user.picture) %><br/>
 
-<%= link_to "General Story Index", stories_path %>
+<%= link_to "My Stories", user_stories_path(@user) %><br/>
 <%= link_to "Create a New Story", new_user_story_path(@user) %><br/>
-<%= link_to "Logout", logout_path, method: :delete %>
