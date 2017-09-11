@@ -1,5 +1,8 @@
 <h1>Story Index</h1>
 
 <% @stories.each do |story| %>
-  <li><%= link_to "Eulogy", user_story_path(@user, @story) %> by: <%= story.name_1 %></br> created on: <%= story.created_at %></li>
+  <li><%= link_to "Eulogy", all_stories_show_path(story) %> by: <%= story.name_1 %></br> created on: <%= story.created_at %></li>
 <% end %>
+<br/>
+
+<%= link_to "Back to Welcome Page: Become a User", root_path %>

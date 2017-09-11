@@ -42,8 +42,11 @@ class StoriesController < ApplicationController
   end
 
   def all_stories
-    @users = Users.all
     @stories = Story.all
+  end
+
+  def all_stories_show
+    @story = Story.find(params[:id])
   end
 
   private
